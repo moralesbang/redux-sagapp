@@ -3,14 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "immutable": "^4.0.0-rc.12",
+    "ramda": "^0.26.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1"
+    "react-redux": "^6.0.0",
+    "react-scripts": "2.1.1",
+    "redux": "^4.0.1",
+    "redux-actions": "^2.6.4",
+    "redux-saga": "^0.16.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "tailwind:css": "tailwind build src/css/tailwind.src.css -c ./tailwind.js -o src/css/tailwind.css",
+    "start": "yarn run tailwind:css && react-scripts start",
+    "build": "yarn run tailwind:css && react-scripts build",
+    "test": "jest",
+    "test:watch": "yarn test --watch",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -21,5 +29,11 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "babel-jest": "^23.6.0",
+    "jest": "^23.6.0",
+    "redux-devtools-extension": "^2.13.7",
+    "tailwindcss": "^0.7.3"
+  }
 }
